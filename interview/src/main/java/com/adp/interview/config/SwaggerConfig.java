@@ -15,16 +15,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
 	String basePackage = "com.adp.interview.web.rest";
-	
+
 	@Bean
 	public Docket productApi() {
-		Docket docket = new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage(basePackage)).build().apiInfo(metaData());
-		return docket;
+		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage(basePackage))
+				.build().apiInfo(metaData());
 	}
 
 	private ApiInfo metaData() {
-		ApiInfoBuilder ab = new ApiInfoBuilder();
-		ApiInfo apiInfo = ab.title("Parking Application Swagger").description("Parking Lot Allotment").contact("shan@adp.com").license("ADP licence").licenseUrl("www.adp.com").version("1.1").build();
-		return apiInfo;
+		return new ApiInfoBuilder().title("Parking Lot System Application Swagger").description("Parking Lot Allotment")
+				.contact("shan@adp.com").license("ADP licence").licenseUrl("www.adp-interview.com").version("1.0")
+				.build();
 	}
 }
