@@ -19,7 +19,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 			ParkingLot entity = new ParkingLot();
 			entity.setNumber(""+i);
 			entity.setType("P"+i);
-			entity.setRate(2);
+			entity.setRate(i);
 			entities.add(entity);
 		}
 		parkingLotRepository.saveAll(entities);

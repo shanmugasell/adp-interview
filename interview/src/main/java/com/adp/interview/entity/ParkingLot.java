@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 @Entity
 @Component
-public class ParkingLot implements Serializable{
+public class ParkingLot implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
